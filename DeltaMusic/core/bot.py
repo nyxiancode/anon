@@ -25,8 +25,8 @@ class DeltaBot(Client):
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
-            sleep_threshold=180,
-            max_concurrent_transmissions=4,
+            sleep_threshold=30,
+            max_concurrent_transmissions=8,
             workers=50,
         )
         LOGGER(__name__).info(f"Memulai Bot...")
