@@ -12,7 +12,7 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 import importlib
-import sys
+from typing import Any
 
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall, GroupCallNotFound
@@ -26,29 +26,24 @@ from DeltaMusic.plugins import ALL_MODULES
 from DeltaMusic.utils.database import get_banned_users, get_gbanned
 
 
-async def init():
-    if (
-        not config.STRING1
-        and not config.STRING2
-        and not config.STRING3
-        and not config.STRING4
-        and not config.STRING5
-    ):
+async def init() -> None:
+    # Check for at least one valid Pyrogram string session
+    if all(not getattr(config, f"STRING{i}") for i in range(1, 6)):
         LOGGER("DeltaMusic").error("Tambahkan sesi string Pyrogram dan coba lagi...")
-        sys.exit()
+        exit()
     await sudo()
     try:
         users = await get_gbanned()
-        for user_id in users:
+        for user_id in await get_gbanned():
             BANNED_USERS.add(user_id)
         users = await get_banned_users()
-        for user_id in users:
+        for user_id in await get_banned_users():
             BANNED_USERS.add(user_id)
     except:
         pass
     await app.start()
-    for all_module in ALL_MODULES:
-        importlib.import_module("DeltaMusic.plugins" + all_module)
+    for module in ALL_MODULES:
+        importlib.import_module("DeltaMusic.plugins" + module)
     LOGGER("DeltaMusic.plugins").info("Modul yang Diperlukan Berhasil Diimpor.")
     await userbot.start()
     await Delta.start()
@@ -58,7 +53,7 @@ async def init():
         LOGGER("DeltaMusic").error(
             "[ERROR] - \n\nNyalakan obrolan suara grup dan jangan matikan, jika tidak, saya akan berhenti bekerja. Terima kasih."
         )
-        sys.exit()
+        exit()
     except:
         pass
     await Delta.decorators()
