@@ -1,3 +1,4 @@
+
 # Copyright (c) 2024 @KSKOP69. All rights reserved.
 # Use of this source code is governed by a proprietary license.
 
@@ -6,36 +7,43 @@
 
 import os
 import requests
+from concurrent.futures import ThreadPoolExecutor
+
 import config
 from ..logging import LOGGER
 
 
-def save_file(pastebin_url, file_path="cookies/cookies.txt"):
+def fetch_content(url: str):
     try:
-        response = requests.get(pastebin_url)
+        response = requests.get(url)
         response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        LOGGER(__name__).error(f"Kesalahan saat mengambil dari {url}: {e}")
+        return ""
 
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
-        if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
-            with open(file_path, "w") as file:
-                file.write("")
-
-        with open(file_path, "w") as file:
-            file.write(response.text)
-        return file_path
-
-    except requests.exceptions.RequestException:
-        return None
+def save_file(content: str, file_path: str):
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "w") as file:
+        file.write(content)
+    return file_path
 
 
 def save_cookies():
-    full_url = str(config.COOKIES)
-    paste_id = full_url.split("/")[-1]
-    pastebin_url = f"https://batbin.me/raw/{paste_id}"
+    full_url: str = str(config.COOKIES)
+    paste_id: str = full_url.split("/")[-1]
+    pastebin_url: str = f"https://batbin.me/raw/{paste_id}"
 
-    file_path = save_file(pastebin_url)
-    if file_path and os.path.getsize(file_path) > 0:
-        LOGGER(__name__).info(f"Cookies berhasil disimpan ke {file_path}.")
+    with ThreadPoolExecutor() as executor:
+        future = executor.submit(fetch_content, pastebin_url)
+        content = future.result()
+
+    if content:
+        file_path = save_file(content, "cookies/cookies.txt")
+        if os.path.getsize(file_path) > 0:
+            LOGGER(__name__).info(f"Cookies berhasil disimpan ke {file_path}.")
+        else:
+            LOGGER(__name__).error("Gagal menyimpan cookies atau file kosong.")
     else:
-        LOGGER(__name__).error("Gagal menyimpan cookies atau file kosong.")
+        LOGGER(__name__).error("Gagal mengambil cookies.")
