@@ -7,7 +7,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from DeltaMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from DeltaMusic.core.call import Hotty
+from DeltaMusic.core.call import Delta
 from DeltaMusic.utils import seconds_to_min, time_to_seconds
 from DeltaMusic.utils.channelplay import get_channeplayCB
 from DeltaMusic.utils.decorators.language import languageCB
