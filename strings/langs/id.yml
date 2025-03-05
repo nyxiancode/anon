@@ -232,7 +232,7 @@ song_11 : "Pengunggahan dimulai\n\nHarap tunggu..."
 queue_1 : "» Harap tunggu..."
 queue_2 : "Antrean Kosong."
 queue_3 : "<u>**Lagu yang Diantrekan:</u>** [Periksa lebih banyak lagu yang diantrekan dari sini]({0})"
-queue_4 : "**💫 Ditambahkan ke antrean di #{0}**\n\n**🌷 Judul :** {1}\n**⏱ Durasi :** {2}\n**Ditambahkan oleh :** @DeltaStreamBot"
+queue_4 : "**💫 Ditambahkan ke antrean di #{0}**\n\n**🌷 Judul :** {1}\n**⏱ Durasi :** {2}\n**Ditambahkan oleh :** "
 queue_5 : "Hanya satu lagu dalam antrean, tambahkan beberapa lagu lagi dalam antrean untuk memeriksa seluruh antrean."
 
 # All Streaming Lines
