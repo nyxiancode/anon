@@ -58,7 +58,7 @@ def PlayWrapper(command):
                     await message.reply_photo(
                         photo="https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg", 
                         caption=f"๏ menurut database saya anda belum bergabung ke [๏Nyxian Network๏]({link}) Namun, jika Anda ingin menggunakan saya, bergabunglah ke [๏Nyxian Network๏]({link}) dan mulai ulang lagi ! ",              reply_markup=InlineKeyboardMarkup(
-                            [[InlineKeyboardButton("๏Jᴏɪɴ๏", url=link)]]
+                            [[InlineKeyboardButton("๏ Jᴏɪɴ ๏", url=link)]]
                         )
                     )
                     return
