@@ -108,67 +108,67 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://envs.sh/akE.jpg"
+    "START_IMG_URL", "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg"
 )
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "assets/Ping.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 PLAYLIST_IMG_URL = getenv(
     "PLAYLIST_IMG_URL",
-    "assets/Playlist.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 GLOBAL_IMG_URL = getenv(
     "GLOBAL_IMG_URL",
-    "assets/Global.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 STATS_IMG_URL = getenv(
     "STATS_IMG_URL",
-    "assets/Stats.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 TELEGRAM_AUDIO_URL = getenv(
     "TELEGRAM_AUDIO_URL",
-    "assets/Audio.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 TELEGRAM_VIDEO_URL = getenv(
     "TELEGRAM_VIDEO_URL",
-    "assets/Video.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 STREAM_IMG_URL = getenv(
     "STREAM_IMG_URL",
-    "assets/Stream.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 SOUNCLOUD_IMG_URL = getenv(
     "SOUNCLOUD_IMG_URL",
-    "assets/Soundcloud.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 YOUTUBE_IMG_URL = getenv(
     "YOUTUBE_IMG_URL",
-    "assets/Youtube.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
     "SPOTIFY_ARTIST_IMG_URL",
-    "assets/SpotifyArtist.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 SPOTIFY_ALBUM_IMG_URL = getenv(
     "SPOTIFY_ALBUM_IMG_URL",
-    "assets/SpotifyAlbum.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 SPOTIFY_PLAYLIST_IMG_URL = getenv(
     "SPOTIFY_PLAYLIST_IMG_URL",
-    "assets/SpotifyPlaylist.jpg",
+    "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg",
 )
 
 
@@ -209,7 +209,7 @@ if GITHUB_REPO:
 
 
 if PING_IMG_URL:
-    if PING_IMG_URL != "assets/Ping.jpg":
+    if PING_IMG_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", PING_IMG_URL):
             print(
             "[ERROR] - URL PING_IMG_URL Anda salah. Pastikan dimulai dengan https://"
@@ -217,7 +217,7 @@ if PING_IMG_URL:
             sys.exit()
 
 if PLAYLIST_IMG_URL:
-    if PLAYLIST_IMG_URL != "assets/Playlist.jpg":
+    if PLAYLIST_IMG_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", PLAYLIST_IMG_URL):
             print(
             "[ERROR] - URL PLAYLIST_IMG_URL Anda salah. Pastikan dimulai dengan https://"
@@ -225,7 +225,7 @@ if PLAYLIST_IMG_URL:
             sys.exit()
 
 if GLOBAL_IMG_URL:
-    if GLOBAL_IMG_URL != "assets/Global.jpg":
+    if GLOBAL_IMG_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", GLOBAL_IMG_URL):
             print(
             "[ERROR] - URL GLOBAL_IMG_URL Anda salah. Pastikan dimulai dengan https://"
@@ -234,7 +234,7 @@ if GLOBAL_IMG_URL:
 
 
 if STATS_IMG_URL:
-    if STATS_IMG_URL != "assets/Stats.jpg":
+    if STATS_IMG_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", STATS_IMG_URL):
             print(
             "[ERROR] - URL STATS_IMG_URL Anda salah. Pastikan dimulai dengan https://"
@@ -243,7 +243,7 @@ if STATS_IMG_URL:
 
 
 if TELEGRAM_AUDIO_URL:
-    if TELEGRAM_AUDIO_URL != "assets/Audio.jpg":
+    if TELEGRAM_AUDIO_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", TELEGRAM_AUDIO_URL):
             print(
             "[ERROR] - URL TELEGRAM_AUDIO_URL Anda salah. Pastikan dimulai dengan https://"
@@ -252,7 +252,7 @@ if TELEGRAM_AUDIO_URL:
 
 
 if STREAM_IMG_URL:
-    if STREAM_IMG_URL != "assets/Stream.jpg":
+    if STREAM_IMG_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", STREAM_IMG_URL):
             print(
             "[ERROR] - URL STREAM_IMG_URL Anda salah. Pastikan dimulai dengan https://"
@@ -261,7 +261,7 @@ if STREAM_IMG_URL:
 
 
 if SOUNCLOUD_IMG_URL:
-    if SOUNCLOUD_IMG_URL != "assets/Soundcloud.jpg":
+    if SOUNCLOUD_IMG_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", SOUNCLOUD_IMG_URL):
             print(
             "[ERROR] - URL SOUNCLOUD_IMG_URL Anda salah. Pastikan dimulai dengan https://"
@@ -269,7 +269,7 @@ if SOUNCLOUD_IMG_URL:
             sys.exit()
 
 if YOUTUBE_IMG_URL:
-    if YOUTUBE_IMG_URL != "assets/Youtube.jpg":
+    if YOUTUBE_IMG_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", YOUTUBE_IMG_URL):
             print(
             "[ERROR] - URL YOUTUBE_IMG_URL Anda salah. Pastikan dimulai dengan https://"
@@ -278,7 +278,7 @@ if YOUTUBE_IMG_URL:
 
 
 if TELEGRAM_VIDEO_URL:
-    if TELEGRAM_VIDEO_URL != "assets/Video.jpg":
+    if TELEGRAM_VIDEO_URL != "https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg":
         if not re.match("(?:http|https)://", TELEGRAM_VIDEO_URL):
             print(
             "[ERROR] - URL TELEGRAM_VIDEO_URL Anda salah. Pastikan dimulai dengan https://"
