@@ -39,9 +39,37 @@ from DeltaMusic.utils.inline.playlist import botplaylist_markup
 
 links = {}
 
+MUST_JOIN = "NyxianNetwork"
 
 def PlayWrapper(command):
     async def wrapper(client, message):
+        # Must Join Check
+        if MUST_JOIN:
+            try:
+                try:
+                    await app.get_chat_member(MUST_JOIN, message.from_user.id)
+                except UserNotParticipant:
+                    if MUST_JOIN.isalpha():
+                        link = "https://t.me/" + MUST_JOIN
+                    else:
+                        chat_info = await app.get_chat(MUST_JOIN)
+                        link = chat_info.invite_link
+                    
+                    await message.reply_photo(
+                        photo="https://res.cloudinary.com/ddhi78eee/image/upload/v1741164944/ab5omzx9ro18bzg5pzkg.jpg", 
+                        caption=f"๏ ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ʏᴏᴜ'ᴠᴇ ɴᴏᴛ ᴊᴏɪɴᴇᴅ [๏sᴜᴘᴘᴏʀᴛ๏]({link}) ʏᴇᴛ, ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜsᴇ ᴍᴇ ᴛʜᴇɴ ᴊᴏɪɴ [๏sᴜᴘᴘᴏʀᴛ๏]({link}) ᴀɴᴅ sᴛᴀʀᴛ ᴍᴇ ᴀɢᴀɪɴ ! ",
+                        reply_markup=InlineKeyboardMarkup(
+                            [[InlineKeyboardButton("๏Jᴏɪɴ๏", url=link)]]
+                        )
+                    )
+                    return
+                except ChatAdminRequired:
+                    print(f"Promote me as admin in MUST_JOIN chat: {MUST_JOIN}")
+                    return
+            except Exception as e:
+                print(f"Error in must join check: {e}")
+                return
+
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
