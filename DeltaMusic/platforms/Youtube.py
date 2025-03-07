@@ -27,10 +27,12 @@ from DeltaMusic.utils.formatters import time_to_seconds
 
 def cookiefile():
     cookie_dir = "cookies"
+    if not os.path.exists(cookie_dir):
+        return None
     cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
-
-    cookie_file = os.path.join(cookie_dir, cookies_files[0])
-    return cookie_file
+    if not cookies_files:
+        return None
+    return os.path.join(cookie_dir, cookies_files[0])
 
 
 async def shell_cmd(cmd):
