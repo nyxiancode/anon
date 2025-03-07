@@ -1,14 +1,12 @@
-# Copyright (C) 2025 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
-# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
-
-""""
-TheTeamAlexa is a project of Telegram bots with variety of purposes.
-Copyright (c) 2021 ~ Present Team Alexa <https://github.com/TheTeamAlexa>
-
-This program is free software: you can redistribute it and can modify
-as you want or you can collabe if you have new ideas.
-"""
-
+#
+# Copyright (C) 2024 by TheTeamVivek@Github, < https://github.com/TheTeamVivek >.
+#
+# This file is part of < https://github.com/TheTeamVivek/YukkiMusic > project,
+# and is released under the MIT License.
+# Please see < https://github.com/TheTeamVivek/YukkiMusic/blob/master/LICENSE >
+#
+# All rights reserved.
+#
 
 import re
 from typing import Union
@@ -18,7 +16,7 @@ from bs4 import BeautifulSoup
 from py_yt import VideosSearch
 
 
-class AppleAPI:
+class Apple:
     def __init__(self):
         self.regex = r"^(https:\/\/music.apple.com\/)(.*)$"
         self.base = "https://music.apple.com/in/playlist/"
@@ -77,7 +75,7 @@ class AppleAPI:
                 xx = (((item["content"]).split("album/")[1]).split("/")[0]).replace(
                     "-", " "
                 )
-            except:
+            except Exception:
                 xx = ((item["content"]).split("album/")[1]).split("/")[0]
             results.append(xx)
         return results, playlist_id
