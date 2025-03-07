@@ -1,14 +1,12 @@
-# Copyright (C) 2025 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
-# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
-
-""""
-TheTeamAlexa is a project of Telegram bots with variety of purposes.
-Copyright (c) 2021 ~ Present Team Alexa <https://github.com/TheTeamAlexa>
-
-This program is free software: you can redistribute it and can modify
-as you want or you can collabe if you have new ideas.
-"""
-
+#
+# Copyright (C) 2024 by TheTeamVivek@Github, < https://github.com/TheTeamVivek >.
+#
+# This file is part of < https://github.com/TheTeamVivek/YukkiMusic > project,
+# and is released under the MIT License.
+# Please see < https://github.com/TheTeamVivek/YukkiMusic/blob/master/LICENSE >
+#
+# All rights reserved.
+#
 
 import random
 from os.path import realpath
@@ -16,10 +14,7 @@ from os.path import realpath
 import aiohttp
 from aiohttp import client_exceptions
 
-
-class UnableToFetchCarbon(Exception):
-    pass
-
+from YukkiMusic.utils.exceptions import UnableToFetchCarbon
 
 themes = [
     "3024-night",
@@ -79,7 +74,7 @@ colour = [
 ]
 
 
-class CarbonAPI:
+class Carbon:
     def __init__(self):
         self.language = "auto"
         self.drop_shadow = True
@@ -111,7 +106,7 @@ class CarbonAPI:
                     json=params,
                 )
             except client_exceptions.ClientConnectorError:
-                raise UnableToFetchCarbon("Tidak dapat menghubungi Host!")
+                raise UnableToFetchCarbon("Can not reach the Host!")
             resp = await request.read()
             with open(f"cache/carbon{user_id}.jpg", "wb") as f:
                 f.write(resp)
