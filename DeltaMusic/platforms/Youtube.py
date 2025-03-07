@@ -20,9 +20,9 @@ from pyrogram.types import Message
 from yt_dlp import YoutubeDL
 
 import config
-from YukkiMusic.utils.database import is_on_off
-from YukkiMusic.utils.decorators import asyncify
-from YukkiMusic.utils.formatters import seconds_to_min, time_to_seconds
+from DeltaMusic.utils.database import is_on_off
+from DeltaMusic.utils.decorators import asyncify
+from DeltaMusic.utils.formatters import seconds_to_min, time_to_seconds
 
 
 def cookies():
