@@ -1,23 +1,30 @@
-# Copyright (C) 2025 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
-# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
+#
+# Copyright (C) 2024 by TheTeamVivek@Github, < https://github.com/TheTeamVivek >.
+#
+# This file is part of < https://github.com/TheTeamVivek/YukkiMusic > project,
+# and is released under the MIT License.
+# Please see < https://github.com/TheTeamVivek/YukkiMusic/blob/master/LICENSE >
+#
+# All rights reserved.
+#
 
-""""
-TheTeamAlexa is a project of Telegram bots with variety of purposes.
-Copyright (c) 2021 ~ Present Team Alexa <https://github.com/TheTeamAlexa>
-
-This program is free software: you can redistribute it and can modify
-as you want or you can collabe if you have new ideas.
-"""
-
-
-from .Apple import AppleAPI
-from .Carbon import CarbonAPI
-from .Resso import RessoAPI
-from .Soundcloud import SoundAPI
-from .Spotify import SpotifyAPI
-from .Telegram import TeleAPI
+from .Apple import Apple
+from .Carbon import Carbon
+from .JioSavan import Saavn
+from .Resso import Resso
+from .Soundcloud import SoundCloud
+from .Spotify import Spotify
+from .Telegram import Telegram
 from .Youtube import YouTube
+
 
 class PlaTForms:
     def __init__(self):
-       self.youtube = YouTube()
+        self.apple = Apple()
+        self.carbon = Carbon()
+        self.saavn = Saavn()
+        self.resso = Resso()
+        self.soundcloud = SoundCloud()
+        self.spotify = Spotify()
+        self.telegram = Telegram()
+        self.youtube = YouTube()
